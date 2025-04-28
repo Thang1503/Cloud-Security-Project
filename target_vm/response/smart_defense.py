@@ -5,9 +5,9 @@ import os
 import psutil
 
 LOG = "../monitoring/resource_log.csv"
-ATTACKER_IP = "192.168.1.80"
+ATTACKER_IP = "192.168.1.80" # Replace this with your attack_vm ip
 CPU_THRESHOLD = 70
-NET_THRESHOLD = 10_000_000  # bytes per 2 sec
+NET_THRESHOLD = 100_000_000  # bytes per 8 sec
 CHECK_INTERVAL = 2
 RULES_APPLIED = False
 
@@ -26,7 +26,7 @@ def apply_firewall_rules():
     subprocess.run(["sudo", "iptables", "-A", "INPUT", "-f", "-j", "DROP"])
     RULES_APPLIED = True
 
-def kill_high_cpu_processes(threshold=20):
+def kill_high_cpu_processes(threshold=5):
     for proc in psutil.process_iter(['pid', 'cpu_percent']):
         if proc.info['cpu_percent'] > threshold:
             try:
