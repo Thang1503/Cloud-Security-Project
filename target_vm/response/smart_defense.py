@@ -5,7 +5,7 @@ import os
 import psutil
 
 LOG = "../monitoring/resource_log.csv"
-ATTACKER_IP = "192.168.1.80" # Replace this with your attack_vm ip
+ATTACKER_IP = "your-attacker-ip"        # Replace with your actual attacker's vm-ip
 CPU_THRESHOLD = 70
 NET_THRESHOLD = 100_000_000  # bytes per 8 sec
 CHECK_INTERVAL = 2
