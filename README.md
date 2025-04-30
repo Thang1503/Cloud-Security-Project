@@ -16,11 +16,11 @@ The project uses:
 
 | Folder | Description |
 |--------|-------------|
-| `attacker_vm/` | Contains attack scripts launched from the Attacker VM |
+| `attack_vm/` | Contains network-based attack scripts launched from the Attacker VM |
 | `target_vm/monitoring/` | Resource monitoring script for the Target VM |
-| `target_vm/defense/` | Smart detection and defense script for automated protection |
-| `target_vm/attacks/` | Local resource exhaustion attacks launched manually inside Target VM |
-| `target_vm/reporting/` | Script to generate graphs from monitoring logs |
+| `target_vm/response/` | Smart detection and defense script for automated protection |
+| `target_vm/host-attack/` | Contains host-based attack scripts launched from the Target VM |
+| `target_vm/report/` | Script to generate graphs from monitoring logs |
 
 ---
 
