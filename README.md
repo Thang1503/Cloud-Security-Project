@@ -64,7 +64,7 @@ sudo python3 container_defense.py
 cd Cloud-Security-Project/attacker_vm
 sudo bash syn_flood_vm.sh <Target_VM_IP>
 ```
-- UDP Flood Attack:
+- UDP Flood Attack: For this attack you need to reset the Target VM once, and open up the container again.
 ```bash
 cd Cloud-Security-Project/attacker_vm
 sudo bash udp_flood.sh <Target_VM_IP>
@@ -79,6 +79,13 @@ cd Cloud-security-Project/target_vm/host-attack
 sudo bash cpu_memory_bomb.sh
 ```
 - CPU Stress attack (inside the container):
+```bash
+cd Cloud-security-Project/target_vm/host-attack
+sudo docker cp infinite_loop.sh 'your-container-name':/tmp/
+sudo docker exec -it 'your-container-name' bash
+cd /tmp
+bash infinite_loop.sh
+```
     
 ### (Optional) 5. Generate a Resource Usage Graph for each attack
 - After each attack, there's two available scripts to generate a resource usage graph for the VM and container
