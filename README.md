@@ -40,9 +40,11 @@ The project uses:
 - There are two different monitoring scripts: **resource_monitor.py** and **container_monitor.py**
 - Run the **resource_monitor.py** when launching an attack on the VM, and **container_monitor.py** when launching an attack on the container
 - Before running the **container_monitor.py** script, please go into the script and edit the CONTAINER_NAME to your own container's name
+```bash
 cd Cloud-Security-Project/target_vm/monitoring
 sudo python3 resource_monitor.py **or**
 sudo python3 container_monitor.py
+```
 
 ### 3. Run Defense on Target VM
 - There are two different defense scripts: **smart_defense.py** and **container_defense.py**
@@ -56,23 +58,31 @@ sudo python3 container_defense.py
 - Remember to launch each attach individualy and not together
 - After each attack, remember to run "sudo iptables -F" to reset the firewall rules so that other attacks can be test appropriately
 - SYN Flood Attack:
+```bash
     cd Cloud-Security-Project/attacker_vm
     sudo bash syn_flood_vm.sh <Target_VM_IP>
+```
 - UDP Flood Attack:
+```bash
     cd Cloud-Security-Project/attacker_vm
     sudo bash udp_flood.sh <Target_VM_IP>
+```
 
 ### 4. Launch Host-based attacks from Target VM
 - Remember to launch each attach individualy and not together
 - After each attack, remember to run "sudo iptables -F" to reset the firewall rules so that other attacks can be test appropriately
 - CPU and Memory Bomb Attack:
+```bash
     cd Cloud-security-Project/target_vm/host-attack
     sudo bash cpu_memory_bomb.sh
+```
 - CPU Stress attack (inside the container):
     
 ### (Optional) 5. Generate a Resource Usage Graph for each attack
 - After each attack, there's two available scripts to generate a resource usage graph for the VM and container
+```bash
     cd Cloud-Security-Project/target_vm/report
     sudo python3 resource_plot.py **or**
     sudo python3 container_resource_plot.py
+```
 
