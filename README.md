@@ -41,7 +41,7 @@ The project uses:
 - Run the **resource_monitor.py** when launching an attack on the VM, and **container_monitor.py** when launching an attack on the container
 - Before running the **container_monitor.py** script, please go into the script and edit the CONTAINER_NAME to your own container's name
 ```bash
-cd Cloud-Security-Project/target_vm/monitoring
+cd ProjectGroup5_codes/target_vm/monitoring
 sudo python3 resource_monitor.py **or**
 sudo python3 container_monitor.py
 ```
@@ -49,9 +49,9 @@ sudo python3 container_monitor.py
 ### 3. Run Defense on Target VM
 - There are two different defense scripts: **smart_defense.py** and **container_defense.py**
 - Run the **smart_defense.py** when launching an attack on the VM, and **container_defense.py** when launching an attack on the container
-- Before running any of the defense script, please go into each script and edit the CONTAINER_NAME and ATTACKER_IP to your own container's name and your **Attacker VM**'s name
+- Before running any of the defense script, please go into each script and edit the CONTAINER_NAME and ATTACKER_IP to your own container's name and your **Attacker VM**'s IP
 ```bash
-cd target_vm/defense
+cd ProjectGroup5_codes/target_vm/response
 sudo python3 smart_defense.py **or**
 sudo python3 container_defense.py
 ```
@@ -61,12 +61,12 @@ sudo python3 container_defense.py
 - After each attack, remember to run "sudo iptables -F" to reset the firewall rules so that other attacks can be test appropriately
 - SYN Flood Attack:
 ```bash
-cd Cloud-Security-Project/attacker_vm
+cd ProjectGroup5_codes/attack_vm
 sudo bash syn_flood_vm.sh <Target_VM_IP>
 ```
 - UDP Flood Attack: For this attack you need to reset the Target VM once, and open up the container again.
 ```bash
-cd Cloud-Security-Project/attacker_vm
+cd ProjectGroup5_codes/attack_vm
 sudo bash udp_flood.sh <Target_VM_IP>
 ```
 
@@ -75,12 +75,12 @@ sudo bash udp_flood.sh <Target_VM_IP>
 - After each attack, remember to run "sudo iptables -F" to reset the firewall rules so that other attacks can be test appropriately
 - CPU and Memory Bomb Attack:
 ```bash
-cd Cloud-security-Project/target_vm/host-attack
+cd ProjectGroup5_codes/target_vm/host-attack
 sudo bash cpu_memory_bomb.sh
 ```
 - CPU Stress attack (inside the container):
 ```bash
-cd Cloud-security-Project/target_vm/host-attack
+cd ProjectGroup5_codes/target_vm/host-attack
 sudo docker cp infinite_loop.sh 'your-container-name':/tmp/
 sudo docker exec -it 'your-container-name' bash
 cd /tmp
@@ -90,7 +90,7 @@ bash infinite_loop.sh
 ### (Optional) 5. Generate a Resource Usage Graph for each attack
 - After each attack, there's two available scripts to generate a resource usage graph for the VM and container
 ```bash
-cd Cloud-Security-Project/target_vm/report
+cd ProjectGroup5_codes/target_vm/report
 sudo python3 resource_plot.py **or**
 sudo python3 container_resource_plot.py
 ```
