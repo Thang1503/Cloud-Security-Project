@@ -32,8 +32,8 @@ The project uses:
 - The tools used in both VMs are: hping3, Scapy, psutil, pandas, matplotlib, htop, and docker
 - The docker container inside the Target VM needs to be build and configure in a specific way for the attack to work properly.
 - Docker set up:
-    - Build an image using the Dockerfile provided in the target_vm folder: "docker build -t <your-image-name> ."
-    - Run the container, mapping port 80 UDP: "docker run -dit --name <your-container-namee> -p 80:80/udp <your-image-name>"
+    - Build an image using the Dockerfile provided in the target_vm folder: "docker build -t 'your-image-name' ."
+    - Run the container, mapping port 80 UDP: "docker run -dit --name 'your-container-namee' -p 80:80/udp 'your-image-name'"
 
 
 ### 2. Run Monitoring on Target VM
